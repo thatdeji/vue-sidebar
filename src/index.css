@@ -1,0 +1,107 @@
+@tailwind base;
+
+@layer base {
+  html,
+  body {
+    @apply overflow-x-hidden w-full h-full;
+  }
+  body {
+    font-family: "Montserrat", sans-serif;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #fff;
+  }
+  ::-webkit-scrollbar-button {
+    background: #fff;
+    border-radius: 10px;
+  }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(91, 33, 182);
+  }
+}
+
+@tailwind components;
+@layer components {
+  .sidebar {
+    @apply fixed top-0 left-0 z-50 flex flex-col h-full shadow-lg bg-white overflow-y-auto py-4 transform -translate-x-full transition-transform;
+    width: 80%;
+    max-width: 300px;
+  }
+  .sidebar.open {
+    @apply -translate-x-0;
+  }
+  @screen md {
+    .sidebar {
+      @apply -translate-x-0;
+      width: 300px;
+    }
+  }
+  .sidebar-btn {
+    @apply text-xl fixed top-6 left-5 flex justify-center items-center;
+    width: 35px;
+    height: 35px;
+  }
+  .logo {
+    @apply px-5 py-6;
+  }
+  .logo__img {
+    @apply mx-auto rounded-full;
+    width: 50px;
+    height: 50px;
+  }
+  .user {
+    @apply mx-4 mb-10;
+  }
+  .user__link {
+    @apply flex items-center rounded-xl px-3 py-5;
+    background-color: #f4f6f8;
+  }
+  .user__img {
+    @apply rounded-full;
+    width: 40px;
+    height: 40px;
+  }
+  .user__name {
+    @apply ml-4 font-semibold;
+  }
+  .menu__list {
+    @apply flex items-center flex-grow leading-normal capitalize relative select-none w-full hover:bg-gray-100 transition-colors;
+    color: rgb(99, 115, 129);
+    height: 50px;
+  }
+  .menu__list.active {
+    @apply text-purple-800 bg-purple-100 border-2;
+    border-right-style: solid;
+    border-right-color: rgba(91, 33, 182);
+  }
+  .menu__list path {
+    fill: rgb(91, 33, 182);
+  }
+  .menu__list.active path {
+    fill: rgb(99, 115, 129);
+  }
+  .menu__link {
+    @apply flex items-center h-full w-full py-2 pl-6 pr-5;
+  }
+  .menu__title {
+    @apply ml-4;
+  }
+  .overlay {
+    @apply fixed top-0 left-0 z-0 w-full h-full opacity-0;
+    background: linear-gradient(82deg, hsl(174deg 14% 11% / 32%) 0%, rgb(22, 20, 26) 100%);
+  }
+  .overlay.open {
+    @apply opacity-100;
+  }
+  @screen md {
+    .overlay {
+      @apply hidden;
+    }
+  }
+}
+
