@@ -10,18 +10,7 @@
   }
   ::-webkit-scrollbar {
     width: 10px;
-  }
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #fff;
-  }
-  ::-webkit-scrollbar-button {
-    background: #fff;
-    border-radius: 10px;
-  }
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: rgba(91, 33, 182);
+    display: none;
   }
 }
 
