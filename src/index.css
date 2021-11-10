@@ -69,10 +69,10 @@
     border-right-color: rgba(91, 33, 182);
   }
   .menu__list path {
-    fill: rgb(91, 33, 182);
+    fill: rgb(99, 115, 129);
   }
   .menu__list.active path {
-    fill: rgb(99, 115, 129);
+    fill: rgb(91, 33, 182);
   }
   .menu__link {
     @apply flex items-center h-full w-full py-2 pl-6 pr-5;
